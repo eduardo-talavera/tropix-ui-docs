@@ -1,0 +1,97 @@
+---
+sidebar_position: 2
+---
+
+# Toggle
+
+## Toggle props
+- `variant: ` → `string options: 'jungleGreen' | 'cobaltBlue' | 'poppy' | 'sunGlow'`
+- `size: ` → `string options: 'sm' | 'md' | 'lg'`
+- `isThemeSwitch` → `boolean`
+- `isToggled` → `boolean`
+- `onPress` → `(toggled: boolean) => void`
+
+````mdx-code-block
+import { SingleToggle } from '@site/src/components/toggle/SingleToggle';
+import { ToggleVariants } from '@site/src/components/toggle/ToggleVariants'
+import { ToggleSizes } from '@site/src/components/toggle/ToggleSizes'
+
+
+## isThemeSwitch and onPress props
+
+```jsx
+import { Toggle } from 'tropix-ui'
+
+
+export const App = () => {
+
+  const [isToggled, setIsToggled] = useState(false)
+   
+  return <>
+      <Toggle 
+        isThemeSwitch
+        onPress={(toggled) => setIsToggled(toggled)}
+      />
+      
+      <p>{ isToggled ? 'Toggled On' : 'Toggled Off' }</p>
+  </>
+};
+```
+
+<SingleToggle isThemeSwitch />
+
+## Variant and isToggled props
+
+```jsx
+import { Toggle } from "tropix-ui"
+
+const toggleVariants = ['jungleGreen', 'cobaltBlue', 'poppy', 'sunGlow']
+
+export const ToggleVariants = () => {
+  return (
+    <>
+      {
+        toggleVariants.map(variant => (
+            <Toggle
+                variant={variant}
+                style={{ margin: '1rem' }}
+                onPress={() => {}}
+                isToggled
+            />
+        ))
+      }
+    </>
+  )
+}
+```
+
+<ToggleVariants />
+
+
+## Size prop
+
+```jsx
+import { Toggle } from "tropix-ui"
+
+const toggleSizes = ['sm', 'md', 'lg']
+
+export const ToggleVariants = () => {
+  return (
+    <>
+      {
+        toggleSizes.map(size => (
+            <Toggle
+                size={size}
+                style={{ margin: '1rem' }}
+                onPress={() => {}}
+            />
+        ))
+      }
+    </>
+  )
+}
+```
+
+<ToggleSizes />
+````
+

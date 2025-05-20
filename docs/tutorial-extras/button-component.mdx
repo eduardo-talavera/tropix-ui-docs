@@ -1,0 +1,158 @@
+---
+sidebar_position: 1
+---
+
+# Button
+
+## Button props
+- `variant: ` → `string options: 'primary' | 'success' | 'warning' | 'danger | ghost'`
+- `size: ` → `string options: 'sm' | 'md' | 'lg' | 'full'`
+- `loader` → `boolean`
+- `outline` → `boolean`
+- `rounded` → `boolean`
+
+
+````mdx-code-block
+import { ButtonVariants } from '@site/src/components/button/ButtonVariants';
+import { ButtonSizes } from '@site/src/components/button/ButtonSizes';
+import { ButtonLoader } from '@site/src/components/button/ButtonLoader';
+
+
+## Variant prop
+
+```jsx
+import { Button } from 'tropix-ui'
+
+
+const ButtonVariants = () => {
+  
+  const buttonVariants = ['primary', 'success', 'warning', 'danger'];
+
+  return <>
+    {
+      buttonVariants.map((variant) => (
+          <Button 
+            key={variant} 
+            variant={variant}
+            style={{ margin: '5px' }}
+          >
+            {variant}
+          </Button>
+        ))
+    }
+  </>
+};
+```
+
+<ButtonVariants />
+
+## Outline prop
+
+```jsx
+import { Button } from 'tropix-ui'
+
+
+const ButtonVariants = () => {
+  
+  const buttonVariants = ['primary', 'success', 'warning', 'danger'];
+
+  return <>
+    {
+      buttonVariants.map((variant) => (
+          <Button 
+            key={variant} 
+            outline
+            variant={variant}
+            style={{ margin: '5px' }}
+          >
+            {variant}
+          </Button>
+        ))
+    }
+  </>
+};
+```
+
+<ButtonVariants outline />
+
+## Rounded prop
+
+```jsx
+import { Button } from 'tropix-ui'
+
+
+const ButtonVariants = () => {
+  
+  const buttonVariants = ['primary', 'success', 'warning', 'danger'];
+
+  return <>
+    {
+      buttonVariants.map((variant) => (
+          <Button 
+            key={variant} 
+            rounded
+            variant={variant}
+            style={{ margin: '5px' }}
+          >
+            {variant}
+          </Button>
+        ))
+    }
+  </>
+};
+```
+
+<ButtonVariants rounded />
+
+
+## Size prop
+
+```jsx
+import { Button } from 'tropix-ui'
+
+
+export const ButtonSizes = () => {
+  
+  const sizes = ['sm', 'md', 'lg', 'full'];
+ 
+  return <>
+    {
+        sizes.map((size) => (
+            <Button 
+                key={size} 
+                size={size}
+                style={{ margin: '5px' }}
+            >
+                { size }
+            </Button>
+        ))
+    }
+  </>
+};
+```
+
+<ButtonSizes />
+
+## loader prop
+
+```jsx
+import { Button } from 'tropix-ui'
+
+
+export const App = () => {
+   
+  return <>
+      <Button 
+          loader
+      >
+          Some Text
+      </Button>
+  </>
+};
+```
+
+<ButtonLoader />
+````
+
+
+
