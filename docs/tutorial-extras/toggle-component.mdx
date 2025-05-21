@@ -50,6 +50,7 @@ export const ToggleVariants = () => {
       {
         toggleVariants.map(variant => (
             <Toggle
+                key={variant}
                 variant={variant}
                 style={{ margin: '1rem' }}
                 onPress={() => {}}
@@ -78,6 +79,7 @@ export const ToggleVariants = () => {
       {
         toggleSizes.map(size => (
             <Toggle
+                key={size}
                 size={size}
                 style={{ margin: '1rem' }}
                 onPress={() => {}}
