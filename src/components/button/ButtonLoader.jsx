@@ -1,6 +1,14 @@
+import { useEffect, useState } from 'react';
 import { Button } from 'tropix-ui'
 
 export const ButtonLoader = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
   return (
     <div style={{
         width: '100%',

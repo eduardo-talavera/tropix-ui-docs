@@ -1,9 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Toggle } from "tropix-ui"
 
 
 export const SingleToggle = ({ isThemeSwitch = false }) => {
   const [isToggled, setIsToggled] = useState(false)
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <div style={{

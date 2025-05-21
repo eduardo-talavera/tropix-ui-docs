@@ -1,7 +1,16 @@
 import { Button } from "tropix-ui";
 import { Wrapper } from "../wrapper/Wrapper";
+import { useEffect, useState } from "react";
 
 export const ButtonSizes = () => {
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
   
   const sizes = ['sm', 'md', 'lg', 'full'];
  
