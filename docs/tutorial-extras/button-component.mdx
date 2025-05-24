@@ -4,23 +4,21 @@ sidebar_position: 1
 
 # Button
 
-## Button props
-- `variant: ` → `string options: 'primary' | 'success' | 'warning' | 'danger | ghost'`
-- `size: ` → `string options: 'sm' | 'md' | 'lg' | 'full'`
+### Button props
+- `variant` → `string options: 'primary' | 'success' | 'warning' | 'danger | ghost'`
+- `size` → `string options: 'sm' | 'md' | 'lg' | 'full'`
 - `loader` → `boolean`
 - `outline` → `boolean`
 - `rounded` → `boolean`
 
 
 
-## Variant prop
+### Variant prop
 
 ```jsx
 import { Button } from 'tropix-ui'
 
-
 export const ButtonVariants = () => {
-  
   const buttonVariants = ['primary', 'success', 'warning', 'danger'];
 
   return <>
@@ -41,14 +39,12 @@ export const ButtonVariants = () => {
 
 <ButtonVariants />
 
-## Outline prop
+### Outline prop
 
 ```jsx
 import { Button } from 'tropix-ui'
 
-
 export const ButtonVariants = () => {
-  
   const buttonVariants = ['primary', 'success', 'warning', 'danger'];
 
   return <>
@@ -70,14 +66,12 @@ export const ButtonVariants = () => {
 
 <ButtonVariants outline />
 
-## Rounded prop
+### Rounded prop
 
 ```jsx
 import { Button } from 'tropix-ui'
 
-
 export const ButtonVariants = () => {
-  
   const buttonVariants = ['primary', 'success', 'warning', 'danger'];
 
   return <>
@@ -100,27 +94,25 @@ export const ButtonVariants = () => {
 <ButtonVariants rounded />
 
 
-## Size prop
+### Size prop
 
 ```jsx
 import { Button } from 'tropix-ui'
 
-
 export const ButtonSizes = () => {
-  
   const sizes = ['sm', 'md', 'lg', 'full'];
  
   return <>
     {
-        sizes.map((size) => (
-            <Button 
-                key={size} 
-                size={size}
-                style={{ margin: '5px' }}
-            >
-                { size }
-            </Button>
-        ))
+      sizes.map((size) => (
+          <Button 
+            key={size} 
+            size={size}
+            style={{ margin: '5px' }}
+          >
+            {size}
+          </Button>
+      ))
     }
   </>
 };
@@ -128,19 +120,17 @@ export const ButtonSizes = () => {
 
 <ButtonSizes />
 
-## loader prop
+### loader prop
 
 ```jsx
 import { Button } from 'tropix-ui'
 
-
-export const App = () => {
-   
+export const App = () => {  
   return <>
       <Button 
-          loader
+        loader
       >
-          Some Text
+        Some Text
       </Button>
   </>
 };

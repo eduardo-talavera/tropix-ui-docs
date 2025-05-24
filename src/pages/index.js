@@ -13,6 +13,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        <img src='/img/tropix-ui-logo-small.png' alt='logo' />
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
@@ -20,7 +21,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
+            to="/docs/getting-started">
             Tropix Ui Tutorial
           </Link>
         </div>
@@ -34,7 +35,7 @@ export default function Home() {
   return (
       <Layout
         title={`${siteConfig.title}`}
-        description="Description will go into a meta tag in <head />">
+        description="Tropix Ui colorful and vibrant design system built with React.">
           <HomepageHeader />
           <main>
             <HomepageFeatures />

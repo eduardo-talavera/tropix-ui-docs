@@ -1,0 +1,222 @@
+---
+sidebar_position: 5
+---
+
+# Input
+
+### Input props
+- `label` → `string`
+- `name` → `string`
+- `id` → `string`
+- `type` → `string options: 'text' | 'email' | 'password' | 'number' | 'search' | 'currency'`
+- `size` → `string options: 'sm' | 'md' | 'lg'`
+- `placeholder` → `string`
+- `intent` → `string options: 'initial' | 'success' | 'error' | 'info'`
+- `errorMessage` → `string`
+- `value` → `string | number`
+- `max` → `number`
+- `icon` → `JSX.Element`
+- `onValueChange` → `(value: number) => void`
+- `onChange` → `(value: string | number) => void`
+- `wrapperStyles` → `CSSProperties`
+
+
+### Input default
+
+```jsx
+import { useState } from 'react'
+import { Input } from 'tropix-ui'
+
+const App = () => {
+  const [value, setValue] = useState('')
+
+  return <>
+      <Input
+        label='Name'
+        name='name'
+        placeholder='Enter your name'
+        onChange={(value) => setValue(value)}
+        value={value}
+      />
+  </>
+}
+```
+
+<InputDefault />
+
+
+### Input intents
+
+```jsx
+import { useState } from 'react'
+import { Input } from 'tropix-ui'
+
+export const App = () => {
+  const [value, setValue] = useState('')  
+  const intents = ['initial', 'success', 'error', 'info']
+
+  return <>
+    {
+      intents.map(intent => (
+        <Input
+          key={intent}
+          intent={intent}
+          onChange={(value) => setValue(value)}
+          label={intent}
+          name='lastname'
+          placeholder='Enter your last name'
+          wrapperStyles={{ margin: '0.5rem' }}
+          value={value}
+        />
+      ))
+    }
+  </>
+}
+```
+
+<InputIntents />
+
+
+### ErrorMessage prop
+
+```jsx
+import { useState } from 'react'
+import { Input } from 'tropix-ui'
+import { REG_EXS } from '@utils/constants'
+
+export const App = () => {
+  const [value, setValue] = useState('someone.email.com')
+  const [errMsg, setErrMsg] = useState('Invalid email format')
+
+  const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+     REG_EXS.email
+    )
+  }
+
+  const handleChange = (value) => {
+    const isValidEmail = validateEmail(value)
+    setValue(value)
+    if (!isValidEmail) setErrMsg('Invalid email format.')
+    else setErrMsg('')  
+  }
+
+  return <>
+      <Input
+        onChange={(value) => handleChange(value)}
+        label='Email'
+        name='email'
+        intent={errMsg ? 'error' : 'success'}
+        errorMessage={errMsg}
+        placeholder='Enter your name'
+        wrapperStyles={{ margin: '0.5rem' }}
+        value={value}
+      />
+  </>
+}
+```
+
+<InputErrMsg />
+
+
+### Currency and number inputs 
+
+```jsx
+import { useState } from 'react'
+import { Input } from 'tropix-ui'
+
+export const App = () => {
+  const [cost, setCost] = useState(0)
+  const [quantity, setQuantity] = useState(0)
+  
+  return <>
+      <Input
+        type='currency'
+        max={100000000}
+        onValueChange={(value) => setCost(value)}
+        label='Cost'
+        name='cost'
+        placeholder='Enter the cost'
+        wrapperStyles={{ margin: '0.5rem' }}
+        value={cost}
+      />
+
+      <Input
+        type='number'
+        onChange={(value) => setQuantity(value)}
+        label='Quantity'
+        name='quantity'
+        placeholder='Enter the quantity'
+        wrapperStyles={{ margin: '0.5rem' }}
+        value={quantity}
+      />
+  </>
+}
+```
+
+<InputCurrencyAndNumber />
+
+
+### Password Input
+
+```jsx
+import { useState } from 'react'
+import { Input } from 'tropix-ui'
+
+const App = () => {
+  const [value, setValue] = useState('')
+
+  return <>
+      <Input
+        label='Password'
+        name='password'
+        type='password'
+        placeholder='Enter your Password'
+        onChange={(value) => setValue(value)}
+        value={value}
+      />
+  </>
+}
+```
+
+<InputDefault 
+    label='Password'
+    type='password'
+    name='password'
+    placeholder='Enter your password'
+ />
+
+
+### Input sizes
+
+```jsx
+import { useState } from 'react'
+import { Input } from 'tropix-ui'
+
+export const App = () => {
+  const [value, setValue] = useState('')  
+  const sizes = ['sm', 'md', 'lg']
+
+  return <>
+    {
+      sizes.map(intent => (
+        <Input
+          key={size}
+          size={size}
+          type='search'
+          onChange={(value) => setValue(value)}
+          label={size}
+          name='search'
+          placeholder='search...'
+          wrapperStyles={{ margin: '0.5rem' }}
+          value={value}
+        />
+      ))
+    }
+  </>
+}
+```
+
+<InputSizes />

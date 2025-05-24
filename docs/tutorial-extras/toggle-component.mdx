@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Toggle
 
-## Toggle props
-- `variant: ` → `string options: 'jungleGreen' | 'cobaltBlue' | 'poppy' | 'sunGlow'`
-- `size: ` → `string options: 'sm' | 'md' | 'lg'`
+### Toggle props
+- `variant` → `string options: 'jungleGreen' | 'cobaltBlue' | 'poppy' | 'sunGlow'`
+- `size` → `string options: 'sm' | 'md' | 'lg'`
 - `isThemeSwitch` → `boolean`
 - `isToggled` → `boolean`
 - `onPress` → `(toggled: boolean) => void`
@@ -14,14 +14,13 @@ sidebar_position: 2
 
 
 
-## isThemeSwitch and onPress props
+### isThemeSwitch and onPress props
 
 ```jsx
+import { useState } from 'react'
 import { Toggle } from 'tropix-ui'
 
-
 export const App = () => {
-
   const [isToggled, setIsToggled] = useState(false)
    
   return <>
@@ -37,24 +36,24 @@ export const App = () => {
 
 <SingleToggle isThemeSwitch />
 
-## Variant and isToggled props
+### Variant and isToggled props
 
 ```jsx
 import { Toggle } from "tropix-ui"
 
-const toggleVariants = ['jungleGreen', 'cobaltBlue', 'poppy', 'sunGlow']
-
 export const ToggleVariants = () => {
+  const toggleVariants = ['jungleGreen', 'cobaltBlue', 'poppy', 'sunGlow']
+
   return (
     <>
       {
         toggleVariants.map(variant => (
             <Toggle
-                key={variant}
-                variant={variant}
-                style={{ margin: '1rem' }}
-                onPress={() => {}}
-                isToggled
+              key={variant}
+              variant={variant}
+              style={{ margin: '1rem' }}
+              onPress={() => {}}
+              isToggled
             />
         ))
       }
@@ -66,23 +65,23 @@ export const ToggleVariants = () => {
 <ToggleVariants />
 
 
-## Size prop
+### Size prop
 
 ```jsx
 import { Toggle } from "tropix-ui"
 
-const toggleSizes = ['sm', 'md', 'lg']
-
 export const ToggleVariants = () => {
+  const toggleSizes = ['sm', 'md', 'lg']
+
   return (
     <>
       {
         toggleSizes.map(size => (
             <Toggle
-                key={size}
-                size={size}
-                style={{ margin: '1rem' }}
-                onPress={() => {}}
+              key={size}
+              size={size}
+              style={{ margin: '1rem' }}
+              onPress={() => {}}
             />
         ))
       }

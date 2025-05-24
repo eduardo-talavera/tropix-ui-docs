@@ -1,0 +1,106 @@
+---
+sidebar_position: 4
+---
+
+# Table
+
+### Table props
+- `headers` → `string array`
+- `children` → `ReactNode`
+- `height` → `number`
+
+### Table.Row props
+- `children` → `ReactNode`
+
+
+### Table.Cell props
+- `label` → `string`
+- `children` → `ReactNode`
+
+
+
+
+### simple table with height prop
+
+```jsx
+import { useState, useEffect } from 'react'
+import { Table } from 'tropix-ui'
+
+export const App = () => {
+  const [users, setUsers] = useState([])
+
+  const getUsers = async () => {
+    const resp = await fetch('https://jsonplaceholder.typicode.com/users')
+    const usersJson = await resp.json()
+
+    setUsers(usersJson)
+   }
+
+  useEffect(() => {
+   getUsers()
+  }, [])
+  
+  return (
+    <Table headers={['Id', 'User', 'Email', 'Website']} height={350}>
+      {
+        users.map(user => (
+            <Table.Row key={user.id}>
+                <Table.Cell label="Id">{user.id}</Table.Cell>
+                <Table.Cell label="Name">{user.name}</Table.Cell>
+                <Table.Cell label="Email">{user.email}</Table.Cell>
+                <Table.Cell label="Phone">{user.Website}</Table.Cell>
+            </Table.Row>
+        ))
+      }
+    </Table>
+  );
+}
+```
+
+<SimpleTable />
+
+
+
+### Table with custom renders
+
+```jsx
+import { useState, useEffect } from 'react'
+import { Table, Avatar } from 'tropix-ui'
+
+export const App = () => {
+  const [users, setUsers] = useState([])
+
+  const getUsers = async () => {
+    const resp = await fetch('https://jsonplaceholder.typicode.com/users')
+    const usersJson = await resp.json()
+
+    setUsers(usersJson)
+   }
+
+  useEffect(() => {
+   getUsers()
+  }, [])
+  
+  return (
+    <Table headers={['Id', 'User', 'Email', 'Website']} height={350}>
+        {
+          users.map((user, i) => (
+            <Table.Row key={user.id}>
+                <Table.Cell label="Id">{user.id}</Table.Cell>
+                <Table.Cell label="User">
+                   <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <Avatar size="sm" src={`https://i.pravatar.cc/100?img=${i}`} />
+                      <span style={{ paddingLeft: '1rem' }}>{ user.name }</span>
+                   </div>
+                </Table.Cell>
+                <Table.Cell label="Email">{user.email}</Table.Cell>
+                <Table.Cell label="Phone">{user.website}</Table.Cell>
+            </Table.Row>
+          ))
+        }
+    </Table>
+  );
+}
+```
+
+<CustomRendersTable />

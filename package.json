@@ -21,7 +21,7 @@
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tropix-ui": "^1.6.1"
+    "tropix-ui": "^1.7.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",

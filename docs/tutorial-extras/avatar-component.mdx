@@ -1,0 +1,57 @@
+---
+sidebar_position: 3
+---
+
+# Avatar
+
+### Avatar props
+- `src` → `string: path to the image`
+- `size` → `string options: 'sm' | 'md' | 'lg'`
+- `variant` → `string options: 'jungleGreen' | 'cobaltBlue' | 'poppy' | 'sunGlow'`
+- `alt` → `string: description for image`
+- `children` → `ReactNode: if the src property is not set`
+
+### src and size props
+
+```jsx
+import { Avatar } from 'tropix-ui'
+
+const AvatarSizes = () => {
+  return (
+    <>
+      <Avatar size="sm" src="https://i.pravatar.cc/100" style={{ margin: '0.5rem' }} />
+      <Avatar size="md" src="https://i.pravatar.cc/100" style={{ margin: '0.5rem' }} />
+      <Avatar size="lg" src="https://i.pravatar.cc/100" style={{ margin: '0.5rem' }} />
+    </>
+  );
+}
+```
+
+<AvatarSizes />
+
+### variant and children prop
+
+```jsx
+import { Avatar } from 'tropix-ui'
+
+const AvatarVariants = () => {
+  const variants = ['jungleGreen', 'cobaltBlue', 'poppy', 'sunGlow'];
+
+  return <>
+    {
+      variants.map(variant => (
+        <Avatar
+          key={variant}
+          variant={variant}
+          style={{ margin: '0.5rem' }}
+        >
+          ET
+        </Avatar>
+      ))
+    }
+  </>
+}
+```
+
+<AvatarVariants />
+
