@@ -6,10 +6,10 @@ sidebar_position: 1
 
 
 
-step 1 install the package
+step 1 installation
 
 ```shell
-npm i tropix-ui
+npm i tropix-ui @emotion/react @emotion/styled
 ```
 
 
