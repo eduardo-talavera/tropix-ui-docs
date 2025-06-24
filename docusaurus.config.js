@@ -144,8 +144,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Tropix Ui, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.oneDark,
+        darkTheme: prismThemes.oceanicNext,
       },
     }),
 };

@@ -16,12 +16,14 @@
   "dependencies": {
     "@docusaurus/core": "3.7.0",
     "@docusaurus/preset-classic": "3.7.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tropix-ui": "^1.7.1"
+    "tropix-ui": "^2.3.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",
